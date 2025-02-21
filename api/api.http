@@ -1,0 +1,29 @@
+### Obter token JWT
+POST http://127.0.0.1:8000/api/token/
+Content-Type: application/json
+
+{
+  "username": "seu_usuario",
+  "password": "sua_senha"
+}
+
+### Obter lista de livros (requer autenticação)
+GET http://127.0.0.1:8000/api/books/
+Authorization: Bearer <seu_token>
+
+### Adicionar um novo livro (requer autenticação)
+POST http://127.0.0.1:8000/api/books/
+Authorization: Bearer <seu_token>
+Content-Type: application/json
+
+{
+  "titulo": "1984",
+  "autor": "George Orwell",
+  "ano_de_leitura": 2025,
+  "nota": 4.8,
+  "comentario": "Uma distopia clássica que continua relevante."
+}
+
+### Deletar um livro (requer autenticação)
+DELETE http://127.0.0.1:8000/api/books/a1f6bd0b-ef6b-4cc8-8807-d0bed363f6d7/
+Authorization: Bearer <seu_token>
